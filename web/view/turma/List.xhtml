@@ -49,15 +49,19 @@ and open the template in the editor.
                                 <h:outputText value="#{turma.ID}"/>
                             </p:column>
 
-                            <p:column  headerText="nome" style="width: 24%">  
+                            <p:column  headerText="docente" style="width: 24%">  
                                 <f:facet name="header">
-                                    <h:outputText value="Nome"/>
+                                    <h:outputText value="Docente"/>
                                 </f:facet>
-                                <h:outputText value="#{turma.nome}"/>
+                                <h:outputText value="#{turma.docente.nome}"/>
                             </p:column> 
 
-                            
-
+                            <p:column  headerText="disciplina" style="width: 24%">  
+                                <f:facet name="header">
+                                    <h:outputText value="Disciplina"/>
+                                </f:facet>
+                                <h:outputText value="#{turma.disciplina.nome}"/>
+                            </p:column>
 
                             <p:column headerText="" style="width: 24%">
                                 <f:facet name="header">
@@ -106,7 +110,7 @@ and open the template in the editor.
                         <br/>
                         <br/>
                         <br/>
-                        <p:commandButton icon="ui-icon-disk" style="width: 270px" value="Criar um docente" ajax="false" action="#{turmaController.prepareCreate()}" onclick="this.form.target = '_self'"/>
+                        <p:commandButton icon="ui-icon-disk" style="width: 270px" value="Criar uma turma" ajax="false" action="#{turmaController.prepareCreate()}" onclick="this.form.target = '_self'"/>
                         <br/>
                         <br/>
                         <p:commandButton icon="ui-icon-arrowrefresh-1-w" style="width: 270px" value="Voltar ao índice" ajax="false" action="/index" onclick="this.form.target = '_self'"/>
