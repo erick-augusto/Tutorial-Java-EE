@@ -28,17 +28,14 @@ and open the template in the editor.
                     <p:panel header="Editar uma turma" style="width:370px;height:200px; position: relative; left: 500px;">  
                         <h:panelGrid columns="2" id="grid">  
 
-                           <h:outputLabel value="Nome : *"></h:outputLabel>  
-                            <p:inputText style="position: relative; right: 100px" value="#{turmaController.turma.nome}" id="txt_title"   
-                                      title="Você deve inserir o nome de uma turma com pelo menos 2 caracteres">
-                    
-                            </p:inputText>
-                            <p:tooltip for="txt_title" showEvent="focus" hideEvent="blur" /> 
-                            
-                            <br/>
-                          
-                            
-
+                           <h:outputLabel value ="Docente: *"></h:outputLabel >
+                           <h:selectOneMenu id="docente" value="#{turmaController.turma.docente}" title="docente">
+                                <f:selectItems value="#{docenteController.itemsAvaiableSelectOne}"/>
+                            </h:selectOneMenu>
+                            <h:outputLabel value="Disciplina: *"></h:outputLabel>
+                             <h:selectOneMenu id="disciplina" value="#{turmaController.turma.disciplina}" title="disciplina">
+                                <f:selectItems value="#{disciplinaController.itemsAvaiableSelectOne}"/>
+                            </h:selectOneMenu>
 
                             <p:commandButton style="width: 180px; height: 40px; font-size: small; position: relative; top: 15px; left: 90px" iconPos="center" ajax="false"  
                                              value="Editar Turma" actionListener="#{turmaController.update()}"
